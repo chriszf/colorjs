@@ -1,0 +1,26 @@
+colorjs
+==============
+
+Basic color analysis with javascript using canvas, finds the luminance and colors in an image element
+
+usage
+--------------
+After including colorjs.js:
+
+    <script type="text/javascript" src="colorjs.js" />
+
+In your page,
+
+    var image_element = document.getElementById("image_id");
+    var color = analyze_color(image_element);
+
+The results look like this:
+
+    {
+        avg: [r, g, b],
+        color_style: "rgb(r, g, b)",
+        lum: lum
+    }
+
+Where r, g, and b are the rgb components of the average color, and lum is
+the Y value/luminance.

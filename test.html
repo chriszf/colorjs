@@ -1,0 +1,34 @@
+<html>
+    <script type="text/javascript" src="colorjs.js"></script>
+    <body>
+        <img id="test_img" src="test.jpg" width="100" />
+        <canvas id="new-color" width="200" height="200"></canvas>
+        <img id="test_img2" src="test2.jpg" width="100" />
+        <canvas id="new-color2" width="200" height="200"></canvas>
+    </body>
+
+    <script>
+        var img;
+        var avg_color;
+        var target_ctx;
+        window.onload = function() {
+            img = document.getElementById("test_img");
+            avg_color = analyze_color(img);
+
+            var target_canvas = document.getElementById("new-color");
+            target_ctx = target_canvas.getContext("2d");
+            target_ctx.fillStyle = avg_color.color_style;
+            target_ctx.fillRect(0, 0, 200, 200); 
+
+            img = document.getElementById("test_img2");
+            avg_color = analyze_color(img);
+
+            target_canvas = document.getElementById("new-color2");
+            target_ctx = target_canvas.getContext("2d");
+            target_ctx.fillStyle = avg_color.color_style;
+            target_ctx.fillRect(0, 0, 200, 200); 
+
+        }
+        
+    </script>
+</html>
